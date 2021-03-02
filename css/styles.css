@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'RocknRoll One', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+header
+{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
+
+body {
+    background-color: #ffc0c0;
+    background-image: url('../imgs/asfalt-dark.png');
+    background-repeat: repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ea5e5e;
+}
+
+
+p{
+    text-align: justify;
+}
+
+
+.nav
+{
+    background: #1e242f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    box-shadow: 0 3px 5px #1e242f;
+}
+
+.nav-menu-button {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    margin-left: auto;
+}
+
+.nav-menu-button span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    transition: top .2s, transform .2s;
+    border-radius: 10px;
+    
+}
+
+.nav-menu-button span:nth-child(1) {
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: left top;
+}
+
+.nav-menu-button span:nth-child(2) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-menu-button span:nth-child(3) {
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    transform-origin: left bottom;
+}
+
+.nav-menu-button.close span {
+    background: #ea5e5e;
+}
+
+.nav-menu-button.close span:nth-child(1) {
+ transform: translate(-50%) rotate(45deg);
+}
+
+.nav-menu-button.close span:nth-child(2) {
+    transform: scale(0);
+}
+
+.nav-menu-button.close span:nth-child(3) {
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.nav-logo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-logo img
+{
+    -webkit-filter: drop-shadow( 2px 2px 10px #0d121a);
+    filter: drop-shadow( 2px 2px 10px #0d121a);
+    transition: all .5s ease-in;
+    width: 48px;
+    animation-name: scaleImg;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-play-state: paused;
+}
+
+.nav:hover .nav-logo img {
+    animation-play-state: running;
+}
+
+@keyframes scaleImg
+{
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+
+.nav-logo h1 {
+    color: white;
+    margin-left: 1em;
+}
+
+.nav-list
+{
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1e242f;
+    border-top: 2px solid white;
+    transform: scaleY(0);
+    overflow: hidden;
+    transform-origin: top;
+    box-shadow: 2px 2px 10px #0d121a;
+}
+
+.nav-list.open {
+    transition: transform .2s;
+    transform:  scaleY(1);
+}
+
+.nav-list-item a
+{
+    padding: 1.2em 1em;
+    color: white;
+    border: 2px solid transparent;
+    text-decoration: none;
+    display: block;
+    transition: all .3s ease;
+}
+
+.nav-list-item.selected a
+{
+    background: #ea5e5e;
+}
+
+.nav-list-item:not(.selected):hover a
+{
+    color: #ea5e5e;
+    box-shadow: 2px 2px 10px #0d121a;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+    .nav-menu-button {
+        display: none;
+    }
+
+    .nav-logo {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        margin-left: 1em;
+    }
+
+    .nav-list
+    {
+        
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        border-top: none;
+        transform: scaleY(1);
+        box-shadow: none;
+        top: 0;
+    }
+
+    .nav-list-item a
+    {
+        margin: 0 0.3em;
+        padding: 0.5em 1em;
+        border-radius: 10px;
+        color: white;
+        border: 2px solid transparent;
+    }
+
+    .nav-list-item:not(.selected):hover a
+    {
+        color: white;
+        border: 2px solid #ea5e5e;
+        box-shadow: 2px 2px 10px #0d121a;
+    }
+}
+
+
+ul.align-with-point
+{
+    margin-left: 18px;
+}

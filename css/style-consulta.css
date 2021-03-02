@@ -1,0 +1,96 @@
+.body-wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.body-wrapper .main
+{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1270px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.label-title {
+    text-align: center;
+}
+
+.section-data {
+    padding: 50px;
+    box-shadow: 0 5px 10px #ea5e5e;
+    background: white;
+    transition: all .3s ease;
+    height: 100%;
+    width: 100%;
+}
+
+.table-puls {
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    display: none;
+}
+
+.table-puls.show {
+    display: table;
+}
+
+.lab-no-data {
+    color: black;
+    text-align: center;
+    margin-top: 40px;
+    font-weight: normal;
+}
+
+
+.table-puls th {
+    background: #ea5e5e;
+    color: white;
+}
+
+.table-puls td, .table-puls th{
+    border: 1px solid #ea5e5e;
+    padding: 10px;
+}
+.table-puls tbody {
+    overflow-x: auto;
+}
+.table-puls tbody tr {
+    text-align: center;
+}
+
+.table-puls tbody tr:nth-child(even)
+{
+    background: #ffc0c0;
+}
+.table-puls tbody tr:nth-child(odd)
+{
+    background: #ffe8e8;
+}
+
+@media only screen and (min-width: 768px) {
+    .body-wrapper .main
+    {
+        width: 90%;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .section-data {
+        
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .section-data {
+        padding: 25px;
+    }
+}
